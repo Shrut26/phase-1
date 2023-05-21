@@ -1,0 +1,406 @@
+go: creating new go.mod: module github.com/Shrut26/library
+go: to add module requirements and sums:
+$ : The term '$' is not recognized as the name of a cmdlet, function, script file, or go-sql-driver/mysql   
+operable program. Check the spelling                                                  operable program. Chec
+of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ $ go get -u github.com/go-sql-driver/mysql
++ ~
+    + CategoryInfo          : ObjectNotFound: ($:String) [], CommandNotFoundException 
+    + FullyQualifiedErrorId : CommandNotFoundException
+go: added github.com/go-sql-driver/mysql v1.7.0                                       -sql-driver/mysql     
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> go run main.go
+exit status 1
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> go get github.com/go-sql-driver/mysql
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> go build .
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> go run main.go
+2023/04/07 21:13:04 Error 1045 (28000): Access denied for user 'root'@'localhost' (usil-driver/mysql        ng password: YES)
+exit status 1
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> go run main.go         ng password: YES)     
+exit status 0xc000013a
+exit status 0xc000013a
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> git status
+fatal: not a git repository (or any of the parent directories): .git
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> mkdir pkg
+
+
+    Directory: C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library
+
+
+
+
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> mv main.go go.mod go.sum pkg
+Move-Item : A positional parameter cannot be found that accepts argument 'go.sum'.    
+At line:1 char:1
++ mv main.go go.mod go.sum pkg
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Move-Item], ParameterBindingExce  
+ 
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> go mod tidy
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> mv main.go go.mod go.sum pkg
+Move-Item : A positional parameter cannot be found that accepts argument 'go.sum'.    
+At line:1 char:1
++ mv main.go go.mod go.sum pkg
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Move-Item], ParameterBindingExce  
+   ption
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Comma  
+   nds.MoveItemCommand
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> mv main.go,go.mod,go.sum pkg
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> dir
+    Directory: C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        07-04-2023     22:00                pkg
+d-----        07-04-2023     21:04                scripts
+-a----        07-04-2023     21:52        7883264 library.exe
+
+
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> git init
+/library/.git/
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> git remote add origin https://github.com/Shrut26/library.git
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> git status
+On branch master
+
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        library.exe
+        pkg/
+        scripts/
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> git add pkg/ scripts/  
+warning: LF will be replaced by CRLF in pkg/go.mod.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in pkg/go.sum.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in scripts/sql.sh.
+The file will have its original line endings in your working directory
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   pkg/go.mod
+        new file:   pkg/main.go
+        new file:   scripts/sql.sh
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        library.exe
+
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> git commit -m"First Ver[master (root-commit) 12498a9] First Version of library API
+ create mode 100644 pkg/go.mod
+ create mode 100644 pkg/go.sum
+ create mode 100644 pkg/main.go
+ create mode 100644 scripts/sql.sh
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> git push origin master 
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (8/8), 1.82 KiB | 109.00 KiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> go version
+go version go1.20.2 windows/amd64
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> tree
+Folder PATH listing for volume OS
+Volume serial number is C0AB-4911
+C:.
+├───pkg
+└───scripts
+Folder PATH listing for volume OS
+Volume serial number is C0AB-4911
+C:.
+├───pkg
+└───scripts
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker build -t library:0.1.0 .
+[+] Building 0.3s (2/2) FINISHED
+ => [internal] load build definition from Dockerfile                             0.2s 
+ => => transferring dockerfile: 154B                                             0.0s 
+ => [internal] load .dockerignore                                                0.1s 
+ => => transferring context: 2B                                                  0.0s 
+failed to solve with frontend dockerfile.v0: failed to create LLB definition: dockerfile parse error line 3: unknown instruction: WORDDIR
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker build -t library:0.1.0 .
+[+] Building 281.9s (9/9) FINISHED
+ => [internal] load build definition from Dockerfile                             0.0s 
+ => => transferring dockerfile: 154B                                             0.0s 
+ => [internal] load .dockerignore                                                0.0s 
+ => => transferring context: 2B                                                  0.0s 
+ => [internal] load metadata for docker.io/library/golang:1.20.3                 4.2s 
+ => [1/4] FROM docker.io/library/golang:1.20.3@sha256:23050c2510e0a920d66b48a  244.9s 
+ => => resolve docker.io/library/golang:1.20.3@sha256:23050c2510e0a920d66b48afd  0.0s 
+ => => sha256:bcc311ec9655c350df3899611fdf134806f97a3e3b2c06c2b 1.80kB / 1.80kB  0.0s 
+ => => sha256:3e440a7045683e27f8e2fa04000e0e078d8dfac0c9713 55.05MB / 55.05MB  103.8s 
+ => => sha256:670730c27c2eacf07897a6e94fe55423ea50b884d9c281 10.88MB / 10.88MB  17.0s 
+ => => sha256:23050c2510e0a920d66b48afdc40043bcfe2e25d044a2d7b3 2.36kB / 2.36kB  0.0s 
+ => => sha256:e1567729a36d83c01f9f85b0cee010b01dd59bc7e6c3c317a 7.32kB / 7.32kB  0.0s 
+ => => sha256:68a71c865a2c34678c6dea55e4b0928f751ee3c0ca91cace6 5.17MB / 5.17MB  3.0s 
+ => => sha256:5a7a2c95f0f8b221d776ccf35911b68eec2cf9414a44d2 54.58MB / 54.58MB  89.3s 
+ => => sha256:db119aaf144b2bc25823dcfc08c6e276826608564a4fb 85.99MB / 85.99MB  164.7s 
+ => => sha256:92ac76a462cb8d40a876912d250348f391e1ebf2ff2 100.14MB / 100.14MB  229.9s 
+ => => sha256:5997e4205ef719aca0e749aaed2000f49a2485a8f3f6861ad95 155B / 155B  105.8s 
+ => => extracting sha256:3e440a7045683e27f8e2fa04000e0e078d8dfac0c971358ae0f8c  19.6s 
+ => => extracting sha256:670730c27c2eacf07897a6e94fe55423ea50b884d9c28161a283bb  1.2s 
+ => => extracting sha256:5a7a2c95f0f8b221d776ccf35911b68eec2cf9414a44d216205a6  34.6s 
+ => => extracting sha256:db119aaf144b2bc25823dcfc08c6e276826608564a4fb7e50c46d  15.0s 
+ => => extracting sha256:92ac76a462cb8d40a876912d250348f391e1ebf2ff2366684011a  13.6s 
+ => => extracting sha256:5997e4205ef719aca0e749aaed2000f49a2485a8f3f6861ad9582f  0.0s 
+ => [internal] load build context                                                0.1s 
+ => => transferring context: 3.16kB                                              0.0s 
+ => [2/4] WORKDIR /home                                                          0.5s 
+ => [3/4] COPY ./pkg /home                                                       0.1s 
+ => [4/4] RUN cd /home && go build -o library                                   30.6s 
+ => => exporting layers                                                          1.1s 
+ => => writing image sha256:5cb05cb0ecaf9a35391c0849679699fea9974ee4754aa8f4b33  0.0s 
+ => => naming to docker.io/library/library:0.1.0                                 0.0s 
+included, verify that the path is correct and try again.
+At line:1 char:17
++ docker images | grep library:0.1.0
++                 ~~~~
+   tion
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker images
+REPOSITORY   TAG         IMAGE ID       CREATED          SIZE
+library      0.1.0       5cb05cb0ecaf   42 minutes ago   854MB
+postgres     12-alpine   200dbf5ad14b   8 days ago       237MB
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker run -p 8080:8080 library:0.1.0
+2023/04/07 18:07:37 dial tcp 127.0.0.1:3306: connect: connection refused
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker tag library:0.1.0 shrut26gits/library:0.1.0
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker images
+REPOSITORY            TAG         IMAGE ID       CREATED          SIZE
+shrut26gits/library   0.1.0       5cb05cb0ecaf   50 minutes ago   854MB
+postgres              12-alpine   200dbf5ad14b   8 days ago       237MB
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker push shrut26gits/library:0.1.0
+The push refers to repository [docker.io/shrut26gits/library]
+f7847d967aad: Preparing
+dfbc3bad50fa: Preparing
+5f70bf18a086: Preparing
+64b178d2449c: Preparing
+1bb3db073a2b: Preparing
+18fdf284b862: Waiting
+5ab567b9150b: Waiting
+a90e3914fb92: Waiting
+ec09eb83ea03: Waiting
+denied: requested access to the resource is denied
+The push refers to repository [docker.io/shrut26gits/library]
+f7847d967aad: Preparing
+5f70bf18a086: Preparing
+64b178d2449c: Preparing
+18fdf284b862: Waiting
+5ab567b9150b: Waiting
+053a1f71007e: Waiting
+ec09eb83ea03: Waiting
+denied: requested access to the resource is denied
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker login -u shrutayu
+Error response from daemon: Get "https://registry-1.docker.io/v2/": unauthorized: incorrect username or password
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker login -u shrutayu
+Password:
+Error response from daemon: Get "https://registry-1.docker.io/v2/": unauthorized: incorrect username or password
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker login -u shrutayu
+Error response from daemon: Get "https://registry-1.docker.io/v2/": unauthorized: incorrect username or password
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker login -u shrutayu
+Password:
+Error response from daemon: Get "https://registry-1.docker.io/v2/": unauthorized: incorrect username or password
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: Shrutayu Aggarwal
+Password:
+Error response from daemon: Get "https://registry-1.docker.io/v2/": unauthorized: incorrect username or password
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker login -u shrutayu
+Password:
+Login Succeeded
+Logging in with your password grants your terminal complete access to your account.
+For better security, log in with a limited-privilege personal access token. Learn more at https://docs.docker.com/go/access-tokens/
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker push shrut26gits/library:0.1.0
+The push refers to repository [docker.io/shrut26gits/library]
+dfbc3bad50fa: Preparing
+64b178d2449c: Preparing
+1bb3db073a2b: Preparing
+18fdf284b862: Waiting
+a90e3914fb92: Waiting
+053a1f71007e: Waiting
+ec09eb83ea03: Waiting
+denied: requested access to the resource is denied
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker images
+shrut26gits/library   0.1.0       5cb05cb0ecaf   About an hour ago   854MB
+postgres              12-alpine   200dbf5ad14b   8 days ago          237MB
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker rmi shrut26gits/library:0.1.0
+Untagged: shrut26gits/library:0.1.0
+REPOSITORY   TAG         IMAGE ID       CREATED             SIZE
+library      0.1.0       5cb05cb0ecaf   About an hour ago   854MB
+postgres     12-alpine   200dbf5ad14b   8 days ago          237MB
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker login
+Authenticating with existing credentials...
+Login Succeeded
+
+Logging in with your password grants your terminal complete access to your account.
+For better security, log in with a limited-privilege personal access token. Learn more at https://docs.docker.com/go/access-tokens/
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker tag library:0.1.0 shrutayu/library:0.1.0   
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker images
+REPOSITORY         TAG         IMAGE ID       CREATED             SIZE
+shrutayu/library   0.1.0       5cb05cb0ecaf   About an hour ago   854MB
+postgres           12-alpine   200dbf5ad14b   8 days ago          237MB
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> docker push shrutayu/library:0.1.0
+The push refers to repository [docker.io/shrutayu/library]
+f7847d967aad: Pushed
+dfbc3bad50fa: Pushed
+5f70bf18a086: Pushed
+64b178d2449c: Pushed
+18fdf284b862: Pushed
+5ab567b9150b: Pushed
+a90e3914fb92: Pushed
+053a1f71007e: Pushed
+ec09eb83ea03: Pushed
+0.1.0: digest: sha256:c292de08ef848d3c777a98699122445db4e6d272e355e02eb2ce448de7598f24 size: 2422
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> k get nodes
+k : The term 'k' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify      
+At line:1 char:1
++ ~
+    + CategoryInfo          : ObjectNotFound: (k:String) [], CommandNotFoundException
+ 
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> k get nodes
+k : The term 'k' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify      
+that the path is correct and try again.
+At line:1 char:1
++ k get nodes
++ ~
+    + CategoryInfo          : ObjectNotFound: (k:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> kubectl get nodes
+NAME             STATUS   ROLES           AGE     VERSION
+docker-desktop   Ready    control-plane   3m10s   v1.25.4
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> mkdir manifests
+
+
+    Directory: C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library
+
+
+Mode                 LastWriteTime         Length Name
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library> cd manifests
+
+    Directory: C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests
+
+----                 -------------         ------ ----
+d-----        08-04-2023     01:34                mysql
+
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\mysql> cd..
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests> kubectl create secret generic mysql-password -n database --from-literal rootpassword=Sh@26010 --dry-ruW0408 01:41:09.256587   25488 helpers.go:663] --dry-run is deprecated and can be replaced with --dry-run=client.
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests> kubectl create ns database --dry-run -oyaml > ns.yaml
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests> kubectl create -f ns.yaml
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests> kubectl create -f secret.yaml
+secret/mysql-password created
+NAME                 PROVISIONER          RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+hostpath (default)   docker.io/hostpath   Delete          Immediate           false                  37m
+persistentvolumeclaim/mysql-pv-claim created
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests> kubectl get pvc -n database
+NAME             STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+mysql-pv-claim   Bound    pvc-00f9c3f4-39f3-44b2-b939-f575b6cfa112   20Gi       RWO            hostpath       22s
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests> kubectl get persistentvolume
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                     STORAGECLASS   REASON   AGE
+pvc-00f9c3f4-39f3-44b2-b939-f575b6cfa112   20Gi       RWO            Delete           Bound    database/mysql-pv-claim   hostpath                55s
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests> kubectl create -f deployment.yaml
+deployment.apps/mysql created
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests> kubectl get pods -n database
+mysql-57c9ccf55b-gbr9t   0/1     ContainerCreating   0          21s
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests> kubectl get pods -n database
+NAME                     READY   STATUS              RESTARTS   AGE
+mysql-57c9ccf55b-gbr9t   0/1     ContainerCreating   0          50s
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests> mkdir mysql
+
+
+    Directory: C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests
+
+
+
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests> mv *.yaml mysql
+restapi.yaml
+al dbname=library
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl create ns restapi --dry-run -oyaml > ns.yaml
+W0408 12:40:45.378048    4012 helpers.go:663] --dry-run is deprecated and can be replaced with --dry-run=client.
+namespace/restapi created
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl create configmap restapi-cm -n restapi --from-literal host=localhost:8080 --from-literPS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl create -f configmap.yaml -n restapi
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> cp ../mysql/secret.yaml
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl create -f secret.yaml
+secret/mysql-password created
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\mysql> kubectl create -f service.yaml
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\mysql> kubectl get endpoints -n database
+NAME    ENDPOINTS       AGE
+mysql   10.1.0.6:3306   53s
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\mysql> kubectl get pods -n database -owide
+NAME                     READY   STATUS    RESTARTS   AGE   IP         NODE             NOMINATED NODE   READINESS GATES
+mysql-57c9ccf55b-gbr9t   1/1     Running   0          11h   10.1.0.6   docker-desktop   <none>           <none>
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\mysql> cd ../restapi
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl create -f configmap.yaml -n restapi
+Error from server (AlreadyExists): error when creating "configmap.yaml": configmaps "restapi-cm" already exists
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl apply -f configmap.yaml -n restapi 
+Warning: resource configmaps/restapi-cm is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically.
+configmap/restapi-cm configured
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl get configmap restapi-cm -oyaml
+Error from server (NotFound): configmaps "restapi-cm" not found
+apiVersion: v1
+data:
+  dbname: library
+kind: ConfigMap
+metadata:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"dbname":"library","host":"mysql.database:3306"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":null,"name":"restapi-cm",  creationTimestamp: "2023-04-08T07:14:14Z"
+  namespace: restapi
+  resourceVersion: "10307"
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl get configmaps -n restapi
+NAME               DATA   AGE
+kube-root-ca.crt   1      38m
+restapi-cm         2      35m
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl get secret -n restapi    
+NAME             TYPE     DATA   AGE
+mysql-password   Opaque   1      33m
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl create -f restapi.yaml -n restapi
+mplate.spec.containers[0].env[0].valueFrom.configKeyRef", unknown field "spec.template.spec.containers[0].env[1].valueFrom.configKeyRef"
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl create -f restapi.yaml -n restapi
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl get pods -n restapi
+NAME                       READY   STATUS    RESTARTS   AGE
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> watch kubectl get pods -n restapi
+verify that the path is correct and try again.
++ watch kubectl get pods -n restapi
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (watch:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl get pods -n restapi
+NAME                       READY   STATUS    RESTARTS   AGE
+restapi-8448f44c84-x7pkk   1/1     Running   0          2m52s
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl get deployments.apps -n restapi
+NAME      READY   UP-TO-DATE   AVAILABLE   AGE
+restapi   1/1     1            1           11m
+W0408 13:35:14.532506   20180 helpers.go:663] --dry-run is deprecated and can be replaced with --dry-run=client.
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl create -f service.yaml
+service/restapi created
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl get all -n restapi
+NAME                           READY   STATUS    RESTARTS   AGE
+pod/restapi-8448f44c84-x7pkk   1/1     Running   0          14m
+
+NAME              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/restapi   ClusterIP   10.102.236.197   <none>        8080/TCP   17s
+
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/restapi   1/1     1            1           14m
+
+NAME                                 DESIRED   CURRENT   READY   AGE
+replicaset.apps/restapi-8448f44c84   1         1         1       14m
+PS C:\Users\Shrutayu Aggarwal\OneDrive\Desktop\phase1\library\manifests\restapi> kubectl port-forward -n restapi svc/restapi 8080
+Forwarding from 127.0.0.1:8080 -> 8080
+Forwarding from [::1]:8080 -> 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
